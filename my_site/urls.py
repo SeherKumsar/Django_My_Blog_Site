@@ -17,7 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.contrib.staticfiles.storage import staticfiles_storage
+
+from django.templatetags.static import static # Not from django.conf.urls.static 
+from django.views.generic.base import RedirectView
+
 urlpatterns = [
+    path('favicon.ico', RedirectView.as_view(url=static('images/favicon.ico'))),
+    # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico'))),
     path('admin/', admin.site.urls),
     path("", include("blog.urls")) # http://localhost:8000/blog/posts/my-first-post
 ]
