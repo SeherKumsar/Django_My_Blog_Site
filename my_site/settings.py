@@ -26,8 +26,9 @@ SECRET_KEY = "django-insecure-jj+s!r&fr9#f(-gj5_uf3n(52k(*u1d8@0lujn&-eps9*^@cfw
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['f7b7-78-180-30-149.ngrok-free.app', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] # Tüm host isimlerini kabul eder
+# ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] # Tüm host isimlerini kabul eder
+ALLOWED_HOSTS = ['inviting-surely-goblin.ngrok-free.app', 'localhost', '127.0.0.1']
+# ngrok http --domain=inviting-surely-goblin.ngrok-free.app 8000
 
 # Application definition
 
@@ -130,3 +131,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+MEDIA_ROOT = BASE_DIR = "uploads"
+# >blog >static\blog >images resimler yerine >uploads\posts
+MEDIA_URL = "/files/"
